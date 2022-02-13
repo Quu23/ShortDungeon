@@ -1,0 +1,29 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch ShortDungeon",
+            "request": "launch",
+            "mainClass": "app/app.ShortDungeon",
+            "projectName": "ShortDungeon_92adc961"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShortDungeon",
+            "request": "launch",
+            "mainClass": "app.ShortDungeon",
+            "projectName": "ShortDungeon_92adc961",
+            "vmArgs": "--module-path C:/javafx-sdk-17.0.1/lib --add-modules javafx.controls --add-modules javafx.media"
+        }
+    ]
+}
