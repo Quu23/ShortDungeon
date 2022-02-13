@@ -9,12 +9,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
 import static app.Mode.*;
 
 public class ShortDungeon extends Application {
 
     GraphicsContext gra;
-    Mode gameMode = LOSE;
+    Mode gameMode = CLEAR;
 
     @Override
     public void start(Stage stage) {
@@ -34,7 +35,7 @@ public class ShortDungeon extends Application {
 		stage.show();
 
         AnimationTimer timer = new AnimationTimer() {
-           
+        
             @Override
             public void handle(long arg0) {
                 gra.setFill(Color.BLACK);
@@ -55,6 +56,11 @@ public class ShortDungeon extends Application {
                         gra.fillText("Push the Esc to close the Window", 23, 200);
                         break;
                     case CLEAR:
+                        gra.setFont(new Font(50));
+                        gra.setFill(Color.YELLOW);
+                        gra.fillText("GAMECLEAR", 75,100);
+                        gra.setFont(new Font(25));
+                        gra.fillText("Push the Esc to close the Window", 23, 200);
                         break;
                     default:
                         gra.setFill(Color.BLACK);

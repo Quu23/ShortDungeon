@@ -1,15 +1,17 @@
 package app;
 
+import static app.Direction.*;
 
+// 全ての生き物の親クラス
 public abstract class Character implements Entity{
 
-    private int hitPoint;
-    private int maxHitPoint;
-    private int specialPoint;
-    private int maxSpecialPoint;
-    private int attackPoint;
-    private int masicPoint;
-    private int defencePoint;
+    private int hitPoint;       //現在のHP
+    private int maxHitPoint;    //最大HP
+    private int specialPoint;   //現在のSP。abilityを使う時に消費する。
+    private int maxSpecialPoint;//最大SP
+    private int attackPoint;    //攻撃力
+    private int masicPoint;     //魔法攻撃力
+    private int defencePoint;   //防御力
     
     Character(int maxhp,int maxsp,int ap,int mp,int dp){
         this.setMaxHitPoint(maxhp);
@@ -66,4 +68,5 @@ public abstract class Character implements Entity{
     
     abstract void move();
     abstract void attack();
+    abstract void ability();
 }

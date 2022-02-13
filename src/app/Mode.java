@@ -5,5 +5,5 @@ public enum Mode {
     SELECT,
     GAME,
     LOSE,
-    CLEAR
+    CLEAR,
 }

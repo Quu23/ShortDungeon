@@ -1,7 +1,7 @@
 package app;
 
+//全てのアイテム・キャラクターはこのインターフェイスを実装する
 public interface Entity {
-    // all of thing that has ID is Entity
-
-    int getId();//return ID.but when do Ovrride,must write ID. 
+    
+    int getId();// そのエンティティの固有IDを返す。しかしオーバーライドするときに値も書く必要がある。
 }
