@@ -66,7 +66,10 @@ public abstract class Character implements Entity{
         this.defencePoint = defencePoint;
     }
     
-    abstract void move();
-    abstract void attack();
-    abstract void ability();
+    public void move(Direction dire){
+        //TODO:座標位置から進めるかを判断し進めたら座標を進める。
+        
+    }
+    abstract void attack(Character chara);
+    abstract void ability(Character chara);
 }
