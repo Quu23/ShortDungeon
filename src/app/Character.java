@@ -12,8 +12,10 @@ public abstract class Character implements Entity{
     private int attackPoint;    //攻撃力
     private int masicPoint;     //魔法攻撃力
     private int defencePoint;   //防御力
+    private int x;
+    private int y;
     
-    Character(int maxhp,int maxsp,int ap,int mp,int dp){
+    Character(int maxhp,int maxsp,int ap,int mp,int dp,int x,int y){
         this.setMaxHitPoint(maxhp);
         this.setHitPoint(this.getMaxHitPoint());
         this.setMaxSpecialPoint(maxsp);
@@ -21,6 +23,21 @@ public abstract class Character implements Entity{
         this.setAttackPoint(ap);
         this.setMasicPoint(mp);
         this.setDefencePoint(dp);
+
+        this.setX(x);
+        this.setY(y);
+    }
+    public int getX() {
+        return this.x;
+    }
+    public void setX(int x) {
+        this.x = x;
+    }
+    public int getY() {
+        return this.y;
+    }
+    public void setY(int y) {
+        this.y = y;
     }
 
     public int getHitPoint() {

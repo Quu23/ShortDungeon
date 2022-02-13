@@ -3,6 +3,7 @@ package app;
 
 
 public abstract class Player extends Character {
+    
     private int level;
     private Weapon weapon; 
     public int getLevel() {
@@ -25,8 +26,10 @@ public abstract class Player extends Character {
     public int getId() {
         return 1000;
     }
-    Player(int maxhp,int maxsp,int ap,int mp,int dp){
-        super(maxhp, maxsp, ap, mp, dp);
+    Player(int maxhp,int maxsp,int ap,int mp,int dp,int x,int y){
+        super(maxhp, maxsp, ap, mp, dp,x,y);
+        this.level=1;
+        this.weapon = new Fist();
     }
 
 }

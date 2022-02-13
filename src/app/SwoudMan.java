@@ -7,7 +7,7 @@ public class SwoudMan extends Player {
             this.attack(chara);
         }
     }
-    SwoudMan(int maxhp,int maxsp,int ap,int mp,int dp){
-        super(maxhp,maxsp,ap,mp,dp);
+    SwoudMan(int maxhp,int maxsp,int ap,int mp,int dp,int x,int y){
+        super(maxhp,maxsp,ap,mp,dp,x,y);
     }   
 }
