@@ -1,21 +1,26 @@
 package app;
 
-public abstract class Character {
-    protected int ID;
-    int hitPoint;
-    int maxHitPoint;
-    int specialPoint;
-    int maxSpecialPoint;
-    int attackPoint;
-    int masicPoint;
-    int defencePoint;
-    Character(int hp,int maxhp,int sp,int maxsp,int ap,int mp,int dp){
-        
 
+public abstract class Character implements Entity{
+
+    private int hitPoint;
+    private int maxHitPoint;
+    private int specialPoint;
+    private int maxSpecialPoint;
+    private int attackPoint;
+    private int masicPoint;
+    private int defencePoint;
+    
+    Character(int maxhp,int maxsp,int ap,int mp,int dp){
+        this.setMaxHitPoint(maxhp);
+        this.setHitPoint(this.getMaxHitPoint());
+        this.setMaxSpecialPoint(maxsp);
+        this.setSpecialPoint(this.getMaxSpecialPoint());
+        this.setAttackPoint(ap);
+        this.setMasicPoint(mp);
+        this.setDefencePoint(dp);
     }
-    public int getID() {
-        return this.ID;
-    }
+
     public int getHitPoint() {
         return this.hitPoint;
     }
@@ -58,4 +63,7 @@ public abstract class Character {
     public void setDefencePoint(int defencePoint) {
         this.defencePoint = defencePoint;
     }
+    
+    abstract void move();
+    abstract void attack();
 }
