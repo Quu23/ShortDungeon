@@ -7,4 +7,5 @@ public enum Mode {
     GAME,
     LOSE,
     CLEAR,
+    TEST,
 }

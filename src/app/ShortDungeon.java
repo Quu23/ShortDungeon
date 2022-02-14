@@ -16,7 +16,7 @@ import static app.Direction.*;
 public class ShortDungeon extends Application {
 
     GraphicsContext gra;
-    Mode gameMode = CLEAR;
+    Mode gameMode = TEST;
     static int[][] map = {
         // 1...wall(移動できない),0...floor(床)
         // ただし一番外側は必ず壁。
@@ -65,6 +65,8 @@ public class ShortDungeon extends Application {
                         break;
                     case GAME:
                         break;
+                    case LOAD:
+                        break;
                     case LOSE:
                         gra.setFont(new Font(50));
                         gra.setFill(Color.RED);
@@ -79,9 +81,19 @@ public class ShortDungeon extends Application {
                         gra.setFont(new Font(25));
                         gra.fillText("Push the Esc to close the Window", 23, 200);
                         break;
-                    default:
+                    case TEST:
                         gra.setFill(Color.BLACK);
                         gra.fillRect(0, 0, 400, 300);
+                        gra.setFill(Color.WHITE);
+                        for (int i = 0; i < map.length; i++) {
+                            for (int j = 0; j < map[0].length; j++) {
+                                if(map[i][j]==0){
+                                    gra.fillRect(j*10, i*10d, 10, 10);
+                                }
+                            }
+                        }
+                        break;
+                    default:
                         break;
                 }              
             }
@@ -100,7 +112,7 @@ public class ShortDungeon extends Application {
         }
         launch(args);
     }
-    public static void makeMaze(){
+    private static void makeMaze(){
         for (int y = 2; y < 11; y+=2) {
             for (int x = 2; x < 11; x+=2) {
                 // 一個飛ばしで壁を置く
@@ -139,6 +151,9 @@ public class ShortDungeon extends Application {
 
             }
         }
+    }
+    private static void makeDungeon(){
+
     }
 
     public static Direction randDirection(){
