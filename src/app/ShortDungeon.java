@@ -11,13 +11,15 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import static app.Mode.*;
+import static app.Direction.*;
 
 public class ShortDungeon extends Application {
 
     GraphicsContext gra;
     Mode gameMode = CLEAR;
-    int[][] map = {
+    static int[][] map = {
         // 1...wall(移動できない),0...floor(床)
+        // ただし一番外側は必ず壁。
         {1,1,1,1,1,1,1,1,1,1,1,1},//1
         {1,0,0,0,0,0,0,0,0,0,0,1},//2
         {1,0,0,0,0,0,0,0,0,0,0,1},//3
@@ -88,6 +90,70 @@ public class ShortDungeon extends Application {
  
     }
     public static void main(String[] args) {
+        makeMaze();
+
+        for (int i = 0; i < map.length; i++) {
+            System.out.println("");
+            for (int j = 0; j < map[0].length; j++) {
+                System.out.print(map[i][j]+" ");
+            }
+        }
         launch(args);
     }
+    public static void makeMaze(){
+        for (int y = 2; y < 11; y+=2) {
+            for (int x = 2; x < 11; x+=2) {
+                // 一個飛ばしで壁を置く
+                map[y][x]=1;
+                if(y!=10){
+                    switch (randDirection()) {
+                        case UP:
+                            map[y-1][x]=1;
+                            break;
+                        case DOWN:
+                            map[y+1][x]=1;
+                            break;
+                        case LEFT:
+                            map[y][x-1]=1;
+                            break;
+                        case RIGHT:
+                            map[y][x+1]=1;
+                            break;
+                        default:
+                            break;
+                    }
+                }else{
+                    switch (randDirection()) {
+                        case UP:
+                        case LEFT:
+                            map[y][x-1]=1;
+                            break;
+                        case DOWN:
+                        case RIGHT:
+                            map[y][x+1]=1;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+            }
+        }
+    }
+
+    public static Direction randDirection(){
+        switch (new java.util.Random().nextInt(4)) {
+            case 0:
+                return UP;        
+            case 1:
+                return DOWN;
+            case 2:
+                return LEFT;
+            case 3:
+                return RIGHT;
+            default:
+                return RIGHT;
+        }
+    }
+
 }

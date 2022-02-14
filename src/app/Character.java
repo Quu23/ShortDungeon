@@ -1,6 +1,5 @@
 package app;
 
-import static app.Direction.*;
 
 // 全ての生き物の親クラス
 public abstract class Character implements Entity{
@@ -84,8 +83,29 @@ public abstract class Character implements Entity{
     }
     
     public void move(Direction dire){
-        //TODO:座標位置から進めるかを判断し進めたら座標を進める。
-        
+        //did:座標位置から進めるかを判断し進めたら座標を進める。
+        switch(dire){
+            case UP:
+                if(ShortDungeon.map[this.getY()-1][this.getX()] != 1){
+                    this.setY(this.getY()-1);
+                }
+                break;
+            case DOWN:
+                if(ShortDungeon.map[this.getY()+1][this.getX()] != 1){
+                    this.setY(this.getY()+1);
+                }
+                break;
+            case LEFT:
+                if(ShortDungeon.map[this.getY()][this.getX()-1] != 1){
+                    this.setX(this.getX()-1);
+                }
+                break;
+            case RIGHT:
+                if (ShortDungeon.map[this.getY()][this.getX()+1] != 1) {
+                    this.setX(this.getX()+1);
+                }
+                break;
+        }
     }
     abstract void attack(Character chara);
     abstract void ability(Character chara);
