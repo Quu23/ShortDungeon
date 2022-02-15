@@ -41,21 +41,24 @@ public class ShortDungeon extends Application {
 
         Group root = new Group();
 
-		Canvas cvs = new Canvas(400, 300);
+		Canvas cvs = new Canvas(300, 300);
 		root.getChildren().add(cvs);
         
         gra=cvs.getGraphicsContext2D();
 
-		Scene scene = new Scene(root, 400, 300, Color.WHITE);
+		Scene scene = new Scene(root, 300, 300, Color.WHITE);
         
 		stage.setScene(scene);
+
+        stage.setResizable(false);
+
 		stage.show();
 
         AnimationTimer timer = new AnimationTimer() {
         
             @Override
             public void handle(long arg0) {
-                gra.setFill(Color.BLACK);
+                gra.setFill(Color.NAVY);
                 gra.fillRect(0, 0, 400, 300);
                 switch(gameMode){
 
@@ -82,13 +85,15 @@ public class ShortDungeon extends Application {
                         gra.fillText("Push the Esc to close the Window", 23, 200);
                         break;
                     case TEST:
-                        gra.setFill(Color.BLACK);
-                        gra.fillRect(0, 0, 400, 300);
                         gra.setFill(Color.WHITE);
                         for (int i = 0; i < map.length; i++) {
                             for (int j = 0; j < map[0].length; j++) {
                                 if(map[i][j]==0){
-                                    gra.fillRect(j*10, i*10d, 10, 10);
+                                    gra.setFill(Color.WHITE);
+                                    gra.fillRect(j*20, i*20, 20, 20);
+                                }else{
+                                    gra.setFill(Color.BLACK);
+                                    gra.fillRect(j*20, i*20, 20, 20);
                                 }
                             }
                         }
@@ -101,6 +106,7 @@ public class ShortDungeon extends Application {
         timer.start();
  
     }
+
     public static void main(String[] args) {
         makeMaze();
 
@@ -112,6 +118,9 @@ public class ShortDungeon extends Application {
         }
         launch(args);
     }
+
+
+
     private static void makeMaze(){
         for (int y = 2; y < 11; y+=2) {
             for (int x = 2; x < 11; x+=2) {
@@ -151,9 +160,19 @@ public class ShortDungeon extends Application {
 
             }
         }
+        makeDungeon();
     }
     private static void makeDungeon(){
-
+        int rand = rand(6);
+        for(int i=3;i<4+rand;i+=rand){
+            for(int j=3;j<4+rand;j+=rand){
+                for (int k=-1;k<2;k++) {
+                    for(int p=-1;p<2;p++){
+                        map[i+k][j+p]=0;               
+                    }
+                }
+            }
+        }
     }
 
     public static Direction randDirection(){
@@ -169,6 +188,10 @@ public class ShortDungeon extends Application {
             default:
                 return RIGHT;
         }
+    }
+    private static int rand(int max){
+        max-=3;
+        return new java.util.Random().nextInt(max)+3;
     }
 
 }
