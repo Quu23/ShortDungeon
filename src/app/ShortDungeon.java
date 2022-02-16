@@ -6,18 +6,22 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import static app.Mode.*;
+
+import java.io.File;
+
 import static app.Direction.*;
 
 public class ShortDungeon extends Application {
 
     GraphicsContext gra;
     Mode gameMode = TEST;
-    static int[][] map = {
+    public static int[][] map = {
         // 1...wall(移動できない),0...floor(床)
         // ただし一番外側は必ず壁。
         {1,1,1,1,1,1,1,1,1,1,1,1},//1
@@ -51,6 +55,8 @@ public class ShortDungeon extends Application {
 		stage.setScene(scene);
 
         stage.setResizable(false);
+
+        stage.getIcons().add(new Image(new File("src/img/slime_ico-export.png").toURI().toString()));
 
 		stage.show();
 
@@ -90,10 +96,10 @@ public class ShortDungeon extends Application {
                             for (int j = 0; j < map[0].length; j++) {
                                 if(map[i][j]==0){
                                     gra.setFill(Color.WHITE);
-                                    gra.fillRect(j*20, i*20, 20, 20);
+                                    gra.fillRect(j*5, i*5, 5, 5);
                                 }else{
                                     gra.setFill(Color.BLACK);
-                                    gra.fillRect(j*20, i*20, 20, 20);
+                                    gra.fillRect(j*5, i*5, 5, 5);
                                 }
                             }
                         }

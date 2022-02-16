@@ -1,4 +1,7 @@
-package app;
+package sub;
+
+import app.Direction;
+import app.ShortDungeon;
 
 
 // 全ての生き物の親クラス

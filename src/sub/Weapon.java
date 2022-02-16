@@ -1,4 +1,4 @@
-package app;
+package sub;
 
 public abstract class Weapon implements Item {
     private int damage;

@@ -1,6 +1,4 @@
-package app;
-
-
+package sub;
 
 public abstract class Player extends Character {
     

@@ -1,4 +1,4 @@
-package app;
+package sub;
 
 //全てのアイテム・キャラクターはこのインターフェイスを実装する
 public interface Entity {

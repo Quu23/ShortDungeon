@@ -1,4 +1,4 @@
-package app;
+package sub;
 
 public class Fist extends Weapon{
     Fist(){
