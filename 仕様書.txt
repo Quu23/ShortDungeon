@@ -11,7 +11,13 @@ stage
 maptip   = 80x80
 charatip = 64x64
 
+属性相性
 
+火　←　水
+
+↓　　　↑
+
+風  ←　土
 
 
 
@@ -20,10 +26,20 @@ charatip = 64x64
 ID規則
 ID番号は1000から始める
 
-player 1000
+player      1000    
 
-Fist   1001
+Fist        1001    0   DROP
 
-Club   1002
+Club        1002    1   WIND
+
+PetrSabel   1003    3   SOIL
+
+Pugio       1004    2   AQUA
+
+IronAxe     1005    6   NORMAL
+
+Regen       1006    4   AQUA
+
+Charmander  1007    3   FIRE
 
 

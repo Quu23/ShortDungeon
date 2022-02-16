@@ -172,6 +172,7 @@ public class ShortDungeon extends Application {
         int rand = rand(6);
         for(int i=3;i<4+rand;i+=rand){
             for(int j=3;j<4+rand;j+=rand){
+                //上下左右と中心の9ますを道にする。
                 for (int k=-1;k<2;k++) {
                     for(int p=-1;p<2;p++){
                         map[i+k][j+p]=0;               
@@ -195,6 +196,10 @@ public class ShortDungeon extends Application {
                 return RIGHT;
         }
     }
+    /**  
+     * @param max
+     * @return rand_number
+    */
     private static int rand(int max){
         max-=3;
         return new java.util.Random().nextInt(max)+3;
