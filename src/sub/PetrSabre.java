@@ -11,4 +11,8 @@ public class PetrSabre extends Weapon {//石の剣
     public int getId() {
         return 1003;
     }
+    @Override
+    public String getName() {
+        return "石の剣";
+    }
 }

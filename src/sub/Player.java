@@ -24,6 +24,10 @@ public abstract class Player extends Character {
     public int getId() {
         return 1000;
     }
+    @Override
+    public String getName() {
+        return "キャラ";
+    }
     Player(int maxhp,int maxsp,int ap,int mp,int dp,int x,int y){
         super(maxhp, maxsp, ap, mp, dp,x,y);
         this.level=1;

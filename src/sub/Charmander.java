@@ -11,4 +11,8 @@ public class Charmander extends Weapon{
     public int getId() {
         return 1007;
     }
+    @Override
+    public String getName() {
+        return "サラマンダー";
+    }
 }

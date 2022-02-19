@@ -9,4 +9,8 @@ public class Fist extends Weapon{
     public int getId() {
         return 1001;
     }
+    @Override
+    public String getName() {
+        return "素手";
+    }    
 }

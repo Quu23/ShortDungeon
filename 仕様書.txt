@@ -1,3 +1,7 @@
+10階層まで、(十回層はボス！)
+F1~F10という感じ
+
+
 stage
 
 300x300
@@ -41,5 +45,7 @@ IronAxe     1005    6   NORMAL
 Regen       1006    4   AQUA
 
 Charmander  1007    3   FIRE
+
+
 
 

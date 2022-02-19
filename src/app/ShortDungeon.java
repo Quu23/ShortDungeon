@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -21,8 +22,10 @@ public class ShortDungeon extends Application {
 
     GraphicsContext gra;
     Mode gameMode = TEST;
+
+    int testX,testY;
     public static int[][] map = {
-        // 1...wall(移動できない),0...floor(床)
+        // 1...wall(移動できない),0...floor(床),-1...階段,2...キャラ,3...モンスター,4...アイテム
         // ただし一番外側は必ず壁。
         {1,1,1,1,1,1,1,1,1,1,1,1},//1
         {1,0,0,0,0,0,0,0,0,0,0,1},//2
@@ -38,9 +41,15 @@ public class ShortDungeon extends Application {
         {1,1,1,1,1,1,1,1,1,1,1,1} //12
     };
 
+    //画像配列
+    public Image imgs[] = {new Image(new File("src/img/Stairs.png").toURI().toString()),null}; 
+
     @Override
     public void start(Stage stage) {
-
+        
+        testX=0;
+        testY=0;
+        
         stage.setTitle("ShortDungeon");
 
         Group root = new Group();
@@ -51,12 +60,14 @@ public class ShortDungeon extends Application {
         gra=cvs.getGraphicsContext2D();
 
 		Scene scene = new Scene(root, 300, 300, Color.WHITE);
+
+        scene.setOnKeyPressed(this::keyPressed);
         
 		stage.setScene(scene);
 
         stage.setResizable(false);
 
-        stage.getIcons().add(new Image(new File("src/img/slime_ico-export.png").toURI().toString()));
+        stage.getIcons().add(imgs[0]);
 
 		stage.show();
 
@@ -91,14 +102,21 @@ public class ShortDungeon extends Application {
                         gra.fillText("Push the Esc to close the Window", 23, 200);
                         break;
                     case TEST:
+
                         gra.setFill(Color.WHITE);
                         for (int i = 0; i < map.length; i++) {
                             for (int j = 0; j < map[0].length; j++) {
                                 if(map[i][j]==0){
                                     gra.setFill(Color.WHITE);
                                     gra.fillRect(j*5, i*5, 5, 5);
-                                }else{
+                                }else if(map[i][j]==1){
                                     gra.setFill(Color.BLACK);
+                                    gra.fillRect(j*5, i*5, 5, 5);
+                                }else if(map[i][j]==-1){
+                                    gra.setFill(Color.YELLOW);
+                                    gra.fillRect(j*5, i*5, 5, 5);
+                                }else if(map[i][j]==2){
+                                    gra.setFill(Color.BLUE);
                                     gra.fillRect(j*5, i*5, 5, 5);
                                 }
                             }
@@ -125,6 +143,30 @@ public class ShortDungeon extends Application {
         launch(args);
     }
 
+    private void keyPressed(KeyEvent e) {
+        map[testY+1][testX+1]=0;
+		switch(e.getCode()) {
+            
+            case ESCAPE:
+                System.exit(0);
+            case A:
+                if(map[testY+1][testX]!=1)testX--;
+                break;
+            case D:
+                if(map[testY+1][testX+2]!=1)testX++;
+                break;
+            case W:
+                if(map[testY][testX+1]!=1)testY--;
+                break;
+            case S:
+                if(map[testY+2][testX+1]!=1)testY++;
+                break;
+		    default:
+                map[testY+1][testX+1]=2;
+			    break;
+		}
+        map[testY+1][testX+1]=2;
+	}
 
 
     private static void makeMaze(){
@@ -180,6 +222,8 @@ public class ShortDungeon extends Application {
                 }
             }
         }
+        map[1][10]=-1;  //階段の設置
+        map[1][1]=2;    //プレイやーのいち
     }
 
     public static Direction randDirection(){

@@ -10,4 +10,8 @@ public class IronAxe extends Weapon{//鉄の斧
     IronAxe(){
         super(6, NORMAL);
     }
+    @Override
+    public String getName() {
+        return "鉄の斧";
+    }
 }

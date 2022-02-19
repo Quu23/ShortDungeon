@@ -10,5 +10,9 @@ public class Pugio extends Weapon {//短剣
     public int getId() {
         return 1004;
     }
+    @Override
+    public String getName() {
+        return "濡れた短剣";
+    }
     
 }

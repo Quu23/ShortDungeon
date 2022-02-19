@@ -9,4 +9,8 @@ public class Club extends Weapon{
     public int getId() {
         return 1002;
     }
+    @Override
+    public String getName() {
+        return "こん棒";
+    }
 }
