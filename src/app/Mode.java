@@ -7,5 +7,5 @@ public enum Mode {
     GAME,
     LOSE,
     CLEAR,
-    TEST,
+    TEST,   //実験用。もっといい名前があるかもしれないがとりあえずはこれで
 }
