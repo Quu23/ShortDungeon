@@ -3,10 +3,10 @@ package sub;
 import static sub.Attribute.*;
 
 public class Charmander extends Weapon{
-    Charmander(){
-        super(3, FIRE);
+    Charmander(int x,int y,int identifier,boolean isOnMap){
+        super(3, FIRE,x,y,identifier,isOnMap);
     }
-    
+
     @Override
     public int getId() {
         return 1007;

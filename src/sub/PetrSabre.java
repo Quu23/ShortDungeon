@@ -4,8 +4,8 @@ import static sub.Attribute.*;
 
 public class PetrSabre extends Weapon {//石の剣
     
-    PetrSabre(){
-        super(3,SOIL);
+    PetrSabre(int x,int y,int identifier,boolean isOnMap){
+        super(3,SOIL,x,y,identifier,isOnMap);
     }     
     @Override
     public int getId() {

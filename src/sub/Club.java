@@ -2,8 +2,8 @@ package sub;
 
 import static sub.Attribute.*;
 public class Club extends Weapon{
-    Club() {
-		super(1,WIND);
+    Club(int x,int y,int identifier,boolean isOnMap) {
+		super(1,WIND,x,y,identifier,isOnMap);
 	}
 	@Override
     public int getId() {

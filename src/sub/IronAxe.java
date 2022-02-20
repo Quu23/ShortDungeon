@@ -7,8 +7,8 @@ public class IronAxe extends Weapon{//鉄の斧
     public int getId() {
         return 1005;
     }
-    IronAxe(){
-        super(6, NORMAL);
+    IronAxe(int x,int y,int identifier,boolean isOnMap){
+        super(6, NORMAL,x,y,identifier,isOnMap);
     }
     @Override
     public String getName() {
