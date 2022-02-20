@@ -40,6 +40,7 @@ public class ShortDungeon extends Application {
         {1,0,0,0,0,0,0,0,0,0,0,1},//11
         {1,1,1,1,1,1,1,1,1,1,1,1} //12
     };
+    public static int[][] miniMap;//移動用のミニマップ
 
     //画像配列
     public Image imgs[] = {new Image(new File("src/img/Stairs.png").toURI().toString()),null}; 
@@ -75,7 +76,7 @@ public class ShortDungeon extends Application {
         
             @Override
             public void handle(long arg0) {
-                gra.setFill(Color.NAVY);
+                gra.setFill(Color.BROWN);
                 gra.fillRect(0, 0, 400, 300);
                 switch(gameMode){
 
@@ -102,10 +103,10 @@ public class ShortDungeon extends Application {
                         gra.fillText("Push the Esc to close the Window", 23, 200);
                         break;
                     case TEST:
-
+                        //ミニマップを作成
                         gra.setFill(Color.WHITE);
-                        for (int i = 0; i < map.length; i++) {
-                            for (int j = 0; j < map[0].length; j++) {
+                        for (int i = 0; i < miniMap.length; i++) {
+                            for (int j = 0; j < miniMap[0].length; j++) {
                                 if(map[i][j]==0){
                                     gra.setFill(Color.WHITE);
                                     gra.fillRect(j*5, i*5, 5, 5);
@@ -210,6 +211,7 @@ public class ShortDungeon extends Application {
         }
         makeDungeon();
     }
+
     private static void makeDungeon(){
         int rand = rand(6);
         for(int i=3;i<4+rand;i+=rand){
@@ -224,6 +226,8 @@ public class ShortDungeon extends Application {
         }
         map[1][10]=-1;  //階段の設置
         map[1][1]=2;    //プレイやーのいち
+        miniMap=new int[12][12];
+        copeIntArray(miniMap, map);
     }
 
     public static Direction randDirection(){
@@ -247,6 +251,15 @@ public class ShortDungeon extends Application {
     private static int rand(int max){
         max-=3;
         return new java.util.Random().nextInt(max)+3;
+    }
+    private static void copeIntArray(int[][] coped/*コピーされた要素を入れる配列*/,int[][] cope/*コピーする配列*/){
+        if(coped.length!=cope.length||coped[0].length!=cope[0].length)throw new IllegalArgumentException("指定した二つの配列の要素数が違います");
+        
+        for (int i = 0; i < cope.length; i++) {
+            for (int j = 0; j < cope[0].length; j++) {
+                coped[i][j]=cope[i][j];
+            }            
+        }
     }
 
 }
