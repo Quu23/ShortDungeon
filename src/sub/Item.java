@@ -10,13 +10,15 @@ public abstract class Item implements Entity{
     private int identifier;
 
     Item(int x,int y,int identifier,boolean isOnMap){
-        if(isOnMap){
+        this.setIdentifier(identifier);
+        this.setOnMap(isOnMap);
+
+        if(this.getIsOnMap()){
             x=NULL;
             y=NULL;    
         }
         this.setX(x);
         this.setY(y);
-        this.setIdentifier(identifier);
     }
     
     public int getX() {
