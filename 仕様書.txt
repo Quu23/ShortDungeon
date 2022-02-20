@@ -46,6 +46,8 @@ Regen       1006    4   AQUA
 
 Charmander  1007    3   FIRE
 
+Halberd     1008    5   NORMAL
+
 
 
 
