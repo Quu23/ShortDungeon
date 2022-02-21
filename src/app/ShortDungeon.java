@@ -107,19 +107,21 @@ public class ShortDungeon extends Application {
                         gra.setFill(Color.WHITE);
                         for (int i = 0; i < miniMap.length; i++) {
                             for (int j = 0; j < miniMap[0].length; j++) {
-                                if(map[i][j]==0){
+                                switch(map[i][j]){
+                                    case 0:
                                     gra.setFill(Color.WHITE);
-                                    gra.fillRect(j*5, i*5, 5, 5);
-                                }else if(map[i][j]==1){
+                                        break;
+                                    case 1:
                                     gra.setFill(Color.BLACK);
-                                    gra.fillRect(j*5, i*5, 5, 5);
-                                }else if(map[i][j]==-1){
-                                    gra.setFill(Color.YELLOW);
-                                    gra.fillRect(j*5, i*5, 5, 5);
-                                }else if(map[i][j]==2){
-                                    gra.setFill(Color.BLUE);
-                                    gra.fillRect(j*5, i*5, 5, 5);
+                                        break;
+                                    case 2:
+                                        gra.setFill(Color.BLUE);
+                                        break;
+                                    case -1:
+                                        gra.setFill(Color.YELLOW);
+                                        break;
                                 }
+                                gra.fillRect(j*5, i*5, 5, 5);
                             }
                         }
                         break;
@@ -162,6 +164,12 @@ public class ShortDungeon extends Application {
             case S:
                 if(map[testY+2][testX+1]!=1)testY++;
                 break;
+            case ALT:
+                map[2][10]=0;
+                map[2][9]=0;
+                map[1][9]=0;
+                testX=9;
+                testY=1;
 		    default:
                 map[testY+1][testX+1]=2;
 			    break;
