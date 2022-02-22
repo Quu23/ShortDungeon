@@ -50,4 +50,6 @@ Halberd         1008    5   NORMAL
 
 ButterflyKnife  1009    4   WIND
 
+StoneStick      1010    4   SOIL
 
+FireSword       1011    7   FIRE
