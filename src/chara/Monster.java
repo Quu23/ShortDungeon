@@ -1,4 +1,4 @@
-package sub;
+package chara;
 
 public abstract class Monster extends Character {
     @Override

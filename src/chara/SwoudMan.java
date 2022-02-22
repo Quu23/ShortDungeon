@@ -1,4 +1,4 @@
-package sub;
+package chara;
 
 public class SwoudMan extends Player {
     @Override

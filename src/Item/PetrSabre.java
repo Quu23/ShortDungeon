@@ -1,10 +1,10 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class PetrSabre extends Weapon {//石の剣
     
-    PetrSabre(int x,int y,int identifier,boolean isOnMap){
+    public PetrSabre(int x,int y,int identifier,boolean isOnMap){
         super(3,SOIL,x,y,identifier,isOnMap);
     }     
     @Override

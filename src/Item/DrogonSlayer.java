@@ -1,11 +1,11 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class DrogonSlayer extends Weapon {
     //備考：最強の武器。ボス層のひとつ前の層にランダムで出現させる
     
-    DrogonSlayer(int x,int y,int identifier,boolean isOnMap){
+    public DrogonSlayer(int x,int y,int identifier,boolean isOnMap){
         super(10, MASTER, x, y, identifier, isOnMap);
     }
     @Override

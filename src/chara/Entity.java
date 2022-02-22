@@ -1,4 +1,4 @@
-package sub;
+package chara;
 
 //全てのアイテム・キャラクターはこのインターフェイスを実装する
 public interface Entity {

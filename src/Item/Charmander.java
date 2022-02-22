@@ -1,9 +1,9 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class Charmander extends Weapon{
-    Charmander(int x,int y,int identifier,boolean isOnMap){
+    public Charmander(int x,int y,int identifier,boolean isOnMap){
         super(3, FIRE,x,y,identifier,isOnMap);
     }
 

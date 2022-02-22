@@ -1,10 +1,10 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class ButterflyKnife extends Weapon {
     
-    ButterflyKnife(int x,int y,int identifier,boolean isOnMap){
+    public ButterflyKnife(int x,int y,int identifier,boolean isOnMap){
         super(4, WIND, x, y, identifier, isOnMap);
     }
     @Override

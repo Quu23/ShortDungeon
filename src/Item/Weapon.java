@@ -1,5 +1,6 @@
-package sub;
+package Item;
 
+import chara.Attribute;
 
 public abstract class Weapon extends Item {
     

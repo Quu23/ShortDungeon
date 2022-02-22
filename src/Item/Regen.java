@@ -1,9 +1,10 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class Regen extends Weapon{//やり
-    Regen(int x,int y,int identifier,boolean isOnMap){
+    
+    public Regen(int x,int y,int identifier,boolean isOnMap){
         super(4, NORMAL,x,y,identifier,isOnMap);
     }
     @Override

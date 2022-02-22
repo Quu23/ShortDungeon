@@ -1,7 +1,9 @@
-package sub;
+package chara;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import Item.*;
 
 public abstract class Player extends Character {
     

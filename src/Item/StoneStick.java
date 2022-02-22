@@ -1,9 +1,10 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class StoneStick extends Weapon{
-    StoneStick(int x,int y,int identifier,boolean isOnMap){
+    
+    public StoneStick(int x,int y,int identifier,boolean isOnMap){
         super(4, SOIL, x, y, identifier, isOnMap);
     }
     @Override

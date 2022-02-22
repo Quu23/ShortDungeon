@@ -1,9 +1,10 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class Pugio extends Weapon {//短剣
-    Pugio(int x,int y,int identifier,boolean isOnMap){
+    
+    public Pugio(int x,int y,int identifier,boolean isOnMap){
         super(2,AQUA,x,y,identifier,isOnMap);
     }
     @Override

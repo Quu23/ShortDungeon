@@ -1,8 +1,8 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 public class Fist extends Weapon{
-    Fist(){
+    public Fist(){
         super(/*damage=*/0,DROP,/*identifier=*/0,/*x=*/NULL,/*y=*/NULL,false);//こぶしはマップ上にはない！！！
     }
     @Override

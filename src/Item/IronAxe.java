@@ -1,13 +1,13 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class IronAxe extends Weapon{//鉄の斧
     @Override
     public int getId() {
         return 1005;
     }
-    IronAxe(int x,int y,int identifier,boolean isOnMap){
+    public IronAxe(int x,int y,int identifier,boolean isOnMap){
         super(6, NORMAL,x,y,identifier,isOnMap);
     }
     @Override

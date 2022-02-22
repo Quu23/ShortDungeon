@@ -1,9 +1,9 @@
-package sub;
+package Item;
 
-import static  sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class Halberd extends Weapon {
-    Halberd(int x,int y,int identifier,boolean isOnMap){
+    public Halberd(int x,int y,int identifier,boolean isOnMap){
         super(5,NORMAL,x,y,identifier,isOnMap);
     }
         

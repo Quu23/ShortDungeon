@@ -1,4 +1,4 @@
-package sub;
+package chara;
 
 import app.Direction;
 import app.ShortDungeon;

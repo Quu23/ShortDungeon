@@ -1,9 +1,9 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class LuckyStick extends Weapon{
-    LuckyStick(int x,int y,int identifier,boolean isOnMap){
+    public LuckyStick(int x,int y,int identifier,boolean isOnMap){
         super(2, EXP, x, y, identifier, isOnMap);
     }
     @Override

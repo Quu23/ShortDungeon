@@ -1,6 +1,8 @@
-package sub;
+package Item;
 
 import java.util.Objects;
+
+import chara.Entity;
 
 public abstract class Item implements Entity{
     

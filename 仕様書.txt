@@ -32,6 +32,8 @@ ID番号は1000から始める
 
 player          1000    
 
+                    ダメージ 属性
+
 Fist            1001    0   DROP
 
 Club            1002    1   WIND
@@ -53,3 +55,7 @@ ButterflyKnife  1009    4   WIND
 StoneStick      1010    4   SOIL
 
 FireSword       1011    7   FIRE
+
+LuckyStick      1012    2   EXP
+
+DrogonSlayer    1013    10  MASTER

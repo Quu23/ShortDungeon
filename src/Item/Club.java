@@ -1,8 +1,9 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 public class Club extends Weapon{
-    Club(int x,int y,int identifier,boolean isOnMap) {
+    
+    public Club(int x,int y,int identifier,boolean isOnMap) {
 		super(1,WIND,x,y,identifier,isOnMap);
 	}
 	@Override

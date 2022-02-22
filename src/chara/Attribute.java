@@ -1,4 +1,4 @@
-package sub;
+package chara;
 
 public enum Attribute {
     NORMAL, //属性なし

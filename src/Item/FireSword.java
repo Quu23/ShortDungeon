@@ -1,9 +1,9 @@
-package sub;
+package Item;
 
-import static sub.Attribute.*;
+import static chara.Attribute.*;
 
 public class FireSword extends Weapon{
-    FireSword(int x,int y,int identifier,boolean isOnMap){
+    public FireSword(int x,int y,int identifier,boolean isOnMap){
         super(7, FIRE, x, y, identifier, isOnMap);
     }
     @Override
