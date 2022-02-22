@@ -12,16 +12,16 @@ public abstract class Weapon extends Item {
         this.setAttribute(attribute);
     }
 
-    public int getDamage() {
+    final public int getDamage() {
         return this.damage;
     }
-    private void setDamage(int damage) {
+    final private void setDamage(int damage) {
         this.damage = damage;
     }
-    public Attribute getAttribute() {
+    final public Attribute getAttribute() {
         return this.attribute;
     }
-    private void setAttribute(Attribute attribute) {
+    final private void setAttribute(Attribute attribute) {
         this.attribute = attribute;
     }
 }
