@@ -9,7 +9,7 @@ public abstract class Player extends Character {
     
     private int level;
     private Weapon weapon; 
-    private List<Item> inventory;//プレイヤーのインベントリ,サイズは6こ
+    private List<Item> inventory;//プレイヤーのインベントリ,サイズは5こ
 
     public int getLevel() {
         return this.level;
