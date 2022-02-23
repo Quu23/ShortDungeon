@@ -59,3 +59,5 @@ FireSword       1011    7   FIRE
 LuckyStick      1012    2   EXP
 
 DrogonSlayer    1013    10  MASTER
+
+Cosmos          1014    19  MASTER
