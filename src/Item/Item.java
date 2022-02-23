@@ -23,28 +23,28 @@ public abstract class Item implements Entity{
         this.setY(y);
     }
     
-    public int getX() {
+    final public int getX() {
         return x;
     }
-    public void setX(int x) {
+    final public void setX(int x) {
         this.x = x;
     }
-    public int getY() {
+    final public int getY() {
         return y;
     }
-    public void setY(int y) {
+    final public void setY(int y) {
         this.y = y;
     }
-    public int getIdentifier() {
+    final public int getIdentifier() {
         return identifier;
     }
-    private void setIdentifier(int identifier) {
+    final private void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
-    private boolean getIsOnMap(){
+    final private boolean getIsOnMap(){
         return isOnMap;
     }
-    public void setOnMap(boolean isOnMap) {
+    final public void setOnMap(boolean isOnMap) {
         this.isOnMap = isOnMap;
     }
 
