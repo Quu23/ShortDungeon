@@ -61,3 +61,8 @@ LuckyStick      1012    2   EXP
 DrogonSlayer    1013    10  MASTER
 
 Cosmos          1014    19  MASTER
+
+
+                    　 効果  備考 
+NormalPortion   1015    10   *  
+
