@@ -46,7 +46,11 @@ public abstract class Character implements Entity{
         return this.hitPoint;
     }
     public void setHitPoint(int hitPoint) {
-        this.hitPoint = hitPoint;
+        if(this.getMaxHitPoint()>hitPoint){
+            this.hitPoint = hitPoint;
+        }else{
+            this.hitPoint=this.getMaxHitPoint();
+        }
     }
     public int getMaxHitPoint() {
         return this.maxHitPoint;
@@ -58,7 +62,11 @@ public abstract class Character implements Entity{
         return this.specialPoint;
     }
     public void setSpecialPoint(int specialPoint) {
-        this.specialPoint = specialPoint;
+        if(this.getMaxSpecialPoint()>specialPoint){
+            this.specialPoint = specialPoint;
+        }else{
+            this.specialPoint=this.getMaxSpecialPoint();
+        }
     }
     public int getMaxSpecialPoint() {
         return this.maxSpecialPoint;
