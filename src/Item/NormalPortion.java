@@ -14,7 +14,7 @@ public class NormalPortion extends Portion{
     }
     @Override
     public String getName() {
-        return "普通のポーション";
+        return "フツ-のポーション";
     }
     @Override
     public void usePortion(Player player) {
