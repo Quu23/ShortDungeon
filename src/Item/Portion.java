@@ -2,9 +2,9 @@ package Item;
 
 public abstract class Portion extends Item{
 
-    int effectPoint;
+    int effectPoint; //ポーションの効果値
 
-    Portion(int x,int y,int identifier,boolean isOnMap){
+    Portion(int effectPoint,int x,int y,int identifier,boolean isOnMap){
         super(x, y, identifier, isOnMap);
         setEffectPoint(effectPoint);
     }
@@ -14,5 +14,8 @@ public abstract class Portion extends Item{
     final private void setEffectPoint(int effectPoint) {
         this.effectPoint = effectPoint;
     }
+    
+    public abstract int getId();
+    public abstract String getName();
 
 }
