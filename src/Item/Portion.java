@@ -1,5 +1,7 @@
 package Item;
 
+import chara.Player;
+
 public abstract class Portion extends Item{
 
     int effectPoint; //ポーションの効果値
@@ -17,5 +19,6 @@ public abstract class Portion extends Item{
     
     public abstract int getId();
     public abstract String getName();
+    public abstract void usePortion(Player player);
 
 }
