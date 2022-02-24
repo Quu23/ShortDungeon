@@ -56,5 +56,7 @@ public abstract class Player extends Character {
         this.inventory=new ArrayList<>();
     }
 
+    public abstract void levelUp();
+
 
 }
