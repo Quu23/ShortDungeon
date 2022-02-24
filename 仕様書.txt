@@ -64,7 +64,9 @@ Cosmos          1014    19  MASTER
 
 
                     　 効果  備考 
-                    
+
 NormalPortion   1015    10   回復  
 
 SuperPortion    1016    25   回復
+
+HyperPortion    1017    40   回復
