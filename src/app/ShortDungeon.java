@@ -134,6 +134,10 @@ public class ShortDungeon extends Application {
  
     }
 
+    public static void playerAction(){
+        
+    }
+
     public static void main(String[] args) {
         makeMaze();
 
