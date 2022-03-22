@@ -118,6 +118,7 @@ public abstract class Character implements Entity{
                 break;
         }
     }
+    abstract void action();
     abstract void attack(Character chara);
     abstract void ability(Character chara);
 }
