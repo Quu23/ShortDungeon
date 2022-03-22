@@ -48,6 +48,10 @@ public abstract class Player extends Character {
     public String getName() {
         return "キャラ";
     }
+    @Override
+    public void action(){
+        app.ShortDungeon.playerAction();
+    }
 
     Player(int maxhp,int maxsp,int ap,int mp,int dp,int x,int y){
         super(maxhp, maxsp, ap, mp, dp,x,y);
